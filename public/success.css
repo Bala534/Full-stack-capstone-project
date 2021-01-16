@@ -1,0 +1,22 @@
+body{
+	background-color: #57635B;
+}
+
+
+.a{
+	border-radius: 50%;
+	margin-top: 150px;
+	margin-left: 700px;
+	height: 70px;
+}
+
+.b{
+	margin-left: 615px;
+	color: #025403;
+	font-size: 35px;
+}
+
+.c{
+	color: #FFFFFF;
+	margin-left: 680px;
+}
