@@ -1,0 +1,445 @@
+Web application
+
+
+
+
+
+
+Creating web application with Express JS
+
+
+
+
+
+
+Using Express
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications. It facilitates the rapid development of Node based Web applications. Following are some of the core features of Express framework −
+
+Allows to set up middlewares to respond to HTTP Requests.
+
+Defines a routing table which is used to perform different actions based on HTTP Method and URL.
+
+Allows to dynamically render HTML Pages based on passing arguments to templates.
+
+Firstly, install the Express framework using NPM so that it can be used to create a web application using node terminal.
+
+//Code   $ npm install express
+
+Image:
+https://lh3.googleusercontent.com/0x3UAkBfX-ft3jQbQdAZ0JCYmwqA6uk5ZBozRnp83ycEt5MJB4f6cPCqADGw8PYSmAxtz3LrNbw4Jbdwg3d4S1dUvJ6JWOfD89swf1Ah_je-4ShARWtKtLOHrJM-XqRV4TJIO1a6
+
+
+
+
+Hello world Example with Express
+Following is a very basic Express app which starts a server and listens on port 3000 for connection. This app responds with Hello World! for requests to the homepage. For every other path, it will respond with a 404 Not Found.
+
+Once the package is installed, it is ready to use.
+
+Include the "express" package the same way you include any other module:
+
+//code
+
+var express = require('express')  
+var app = express()  
+  
+app.get('/', function (req, res) {  
+res.send('Hello World!')  
+})  
+  
+app.listen(3000, function () {  
+console.log('Example app listening on port 3000!')  
+})
+
+Above is a very basic Express app which starts a server and listens on port 3000 for connection. This app responds with Hello World! for requests to the homepage. For every other path, it will respond with an error.
+
+
+Run the app with the following command:
+//code
+
+node main.js  
+
+Then, load http://localhost:3000/ in a browser to see the output.
+
+Image:
+https://lh4.googleusercontent.com/uKtVMAr0AoQgodoTWSU3Gcerg7XP5aCWqPpLfAS9X3hpE_mhrO9fPyHnnb3tkoln-l0-Zuo-_oCgPRCH-UPTtUEqpcpbpw-kFrQsUlLkR1zf9M9SlYubXjUX1Wfq6DvhFFj3mvXH
+
+Image:
+https://lh5.googleusercontent.com/NLbpl-v1ryDjN1ErIq8kxjWOAaji7x6sW5kuoo6fg1s5ubnju01On5gQbgW2F5rmdnOtUg53o82ZPztigXzVUNP05J-1WsWrN7BjmB1k9Bwqzr-6UdKkrFRkupBiV2N2zn7NRXXo
+
+Displaying Hello World in main route.
+
+Image:
+https://lh3.googleusercontent.com/VpHvsL_p7bJq3S-GI3fe7V1-ybigGohaCkUMV7pr8HMX5hxxCAiRF898ElgxLabECWJKliMTtsTnqfTQ6l6aSnBdLjBTabKGmPr2dPF0_QFBLt3EzaVe5rDzGuvVCrN6BXoEk4kq
+
+Displaying Cannot GET /login Error. Since we haven't created the login route.
+
+
+
+
+
+
+
+Request & Response
+Express application uses a callback function whose parameters are request and response objects.
+
+//code
+app.get('/', function (req, res) {  
+  
+}) 
+
+
+
+Request Object − The request object represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, and so on.
+
+Response Object − The response object represents the HTTP response that an Express app sends when it gets an HTTP request.
+
+You can print req and res objects which provide a lot of information related to HTTP request and response including cookies, sessions, URL, etc.
+
+
+
+
+
+Basic routing
+Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).
+
+Each route can have one or more handler functions, which are executed when the route is matched.
+
+Route definition takes the following structure:
+//code
+app.METHOD(PATH, HANDLER)  
+
+Where:
+
+app is an instance of express.
+METHOD is an [HTTP request method] ((https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods), in lowercase.
+PATH is a path on the server.
+HANDLER is the function executed when the route is matched.
+
+The following examples illustrate defining simple routes.
+
+Respond with Hello World! on the homepage route:
+
+//code
+app.get('/', function (req, res) {  
+res.send('Hello World!')  
+})
+
+Respond with Hello World I’m Profile Page! on the profile route:
+
+//code
+app.get('/profile', function (req, res) {  
+res.send('Hello World! I’m Profile Page')  
+})
+
+
+Image:
+https://lh6.googleusercontent.com/_Mjo5xnivQ2qE17AyEMYxAqiHofKVbcEWIrSEbK9k6mrN0XvN0vPpVmY7Kp1w5OzFHiGUbvvUZVuumqE1MnRcnyCLIX2n5yN5MOpI0tE6RqTPMQ5QEdHJiZNgsVHWiUN0KdiQLvP
+
+
+Serving Static Files in Express
+Express provides a built-in middleware express.static to serve static files, such as images, CSS, JavaScript, etc.
+
+You simply need to pass the name of the directory where you keep your static assets, to the express.static middleware to start serving the files directly. For example, if you keep your images, CSS, and JavaScript files in a directory named public, you can do this −
+
+//code
+app.use(express.static('public'));  
+
+
+
+
+
+
+
+Note:
+‘__dirname’ is a pre-defined variable in NodeJS which prints the address of the present working directory from the home directory.
+
+For example, if the location of our project is ‘C:\Users\Admin\Projects\NodeJS\app.js’,
+
+__dirname will be ‘C:\Users\Admin\Projects\NodeJS\’.
+
+We will keep a few images in public sub-directory as follows −
+
+
+//code
+
+node_modules  
+server.js  
+public/index.html  
+public/images  
+public/images/logo.png  
+
+
+
+File Structure to be maintained as follows
+
+Image:
+https://lh5.googleusercontent.com/DDj1mp8jBiIie-jGIz7RPiaeFsmug_hchR1oq0-k0dxaJ8zYVL8wpqwx2AhBe9qt_EEVrGxeOYCKAPozPkJ-qM4CUc5MTK568rFmOAmxgioFImZp8_XS3t3MXNPEYTOTl3Up4EVU
+
+Image:
+https://lh3.googleusercontent.com/8Nv8Pwhki-QEmJ8MCHMY98f1zg0DzdQCmMtHv7XyA2tpS4TfDLgP4SJ-4LX34Q9ry8m7cmfHf2AyZVC8tOSXY0ZjMCkfqJtZy_VBJu-eThlxRe9BXg4tD8jDURda-e53dQ8sX9tf
+
+
+Let's modify "Hello World" app to add the functionality to handle static files
+
+//code
+
+var app = require('express');
+var express = require('express')  
+var app = express()
+
+ 
+app.use(express.static('public'));
+
+  
+app.get('/', function (req, res) {  
+res.sendFile( __dirname + "/public/" + "index.html" );
+
+  
+})  
+  
+app.listen(3000, function () {  
+console.log('Example app listening on port 3000!')  
+})
+
+
+
+Image:
+https://lh6.googleusercontent.com/1Y1jt9NqLtuOLXpMekdmJTnkTjc2tfjqPCT90GGHZYrVwcq7YPCWqLoR0ShddnOuq4TN9CZPBH_TnCsIqmloTPtFSo-aEhDB1JCXZnjWUYxT2z7UmCLxxLYwIvbSlsMjE4sq_poL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Working with Dynamic Routing
+
+
+
+
+Dynamic Routing:
+Till now we defined routes which are static, i.e., once they are defined, they can’t be changed. Dynamic routes can be created using ‘:’ symbol in the route.
+
+For example, if we want to create a profile page for every user registered and it just displays the name of the user.
+
+Suppose there are two users.In Static routing, we have to create two routes
+
+//code
+
+app.use(‘/profile/raju’,function(req,res){.....})
+
+app.use(‘/profile/ravi’,function(req,res){.....})
+
+In dynamic routing, we have to create only one route in the following way,
+
+//code
+app.use(‘/profile/:name’,function(req,res){.....})
+
+and the name can be obtained by assigning a variable to ‘req.params.name’
+
+
+
+Image:
+https://lh6.googleusercontent.com/7-hOv8D35TYmdqPwtI4tm8BeXvMA7XwS6_MD1HseKFlV2zxc9AdD61spDhmbShJx_VAEWlbZzilOrPdWzU9nuEA3w7KL4JMvAQMiPK3vg6A9Is1ASsXM0Og1apNUSVtqHUIPWf0E
+
+
+
+
+
+
+
+Get vs Post:
+When a web page is requested through the browser, the web application receives a ‘get’ request.
+
+In our routes, we write
+
+//code
+app.get(‘/’,callback)
+
+It means that when the app receives a get request for the ‘/’ (home page), callback function is called.
+
+These are called Methods ( GET, POST etc.)
+
+
+When to use What:
+Get - User asks GET ME THAT PAGE
+
+Post - User enters some data and says TAKE/POST THIS INFO
+
+When a user enters some data into the form in a web-page and submits the form, actions are performed according to the attribute values in the HTML page.
+
+Every HTML form consists of a ‘method’ attribute and ‘action’ attribute.
+
+//code
+<form method=’get’ action= ‘/loginsubmit’></form>
+
+
+
+So what is the difference between them ?
+When a user submits the form using the ‘get’ action, the data that we entered in the form is passed to the server using the URL.
+
+If these are the app.js and login.html files, observe the URL after we submit the form.
+
+//Image:
+https://lh3.googleusercontent.com/WpZVMjZ0OX62XRM8KTqBcptRQS5BTzEepfh31j1dZ9DHShhA3oKahLOH--2lYj11JEFqqbDwaEaGe3wjat5bMgnyv-aCwvzrm5AaRbK9G7Kq0tqERaa8IEYUYfu9iEe1atyIpvky
+
+
+It’ll look something like this
+
+http://localhost:3000/loginsubmit?name=StudyOwl&pass=admin
+
+Clearly, the data is insecure. Because anyone can find out the information just by looking at the URL. Hence the method ‘POST’ is used.
+
+Firstly we have to install the package ‘body-parser’ using npm.
+
+//code
+
+npm install body-parser
+
+
+Change your file contents as shown in the below picture.
+
+//Image:
+https://lh4.googleusercontent.com/nDBaYjlZVo8NANgzT_s1tEUU4vQXQtoPfwH-PjiFfKC04T-u0cnJIVyW972xsZUIW4RgpzMyhWtA0jn_leZbsepMdChK3C6ZwBRvuGNmaK_8HxoWmXI69HJ4QmLLZrDj8kyHQdl0
+
+
+In the form tag, we used the attribute value for method as ‘post’ and action can be the same as the present HTML page’s route.
+
+In app.js we see that there are parts that have the same route.
+
+One is app.get and another one is app.post . It means that when the app receives a GET request use the route with app.get and if the app receives a POST request use the route with app.post.
+
+
+body-parser:
+When we use body-parser, the entire document gets stored in an object called ‘body’. The data passed from the login form can be accessed in the following way,
+
+req.body.name Here name is the value for the attribute name of an input box.
+
+By using this method the data we entered in the form will not be visible in the URL, hence the data would be safe. Also we can avoid confusion by using the same route for both the login form and loginsubmit form.
+
+
+
+
+
+
+Ejs:
+
+
+
+Embedded JavaScript templates
+
+EJS is a simple templating language that lets you generate HTML files with plain JavaScript.
+
+
+WHY EJS?
+HTML files are by default static files which means that those files are created once and cannot be modified in run-time. To create Dynamic HTML files which can change content based on the conditions we require JavaScript.
+
+So basically, HTML + JS = EJS
+
+In EJS files, we use the same tags as HTML and CSS styling can also be done in the same way as before.
+
+Installation
+
+//code
+npm install ejs
+
+
+And Create a New folder in your project’s home directory called views. Your file structure should look like this : (From Now on do not create any HTML files, create everything as ejs files)
+
+
+//code
+
+node_modules  
+app.js  
+public/css/bootstrap.css
+
+views/index.js  
+public/images  
+public/images/logo.png
+
+
+Image:
+https://lh3.googleusercontent.com/C2agWxxqArgVnKXbBLQcysjlNi7wyEHEUFcaBcYMSFfA0pyEeVU5LYFD5I52osGkcaQ_aHD7uZpXD5sQ6RRJp-Jo7XChOhfbdpIxiLtZuphDpLPf5uiONnVytesUYVTCQ1XpjWUq
+
+
+Create views folder
+
+Usage
+Create a new ejs file with name “index.ejs” and save it in views folder.
+
+Image:
+https://lh5.googleusercontent.com/-mdmkR6s-1JAUHWDa8d-05mnKgFu9cjOQRVm2tr0-jnKUnusQ_IOIaXAhH_fndJsm1SKcRgCqiaR3C9Xce7KxDfIKQMljgd_o0cyVIVP6LGzuAM22ZULToCoAX_4cQKRWbNJxUKc
+
+
+Code : app.js
+
+
+//code
+
+
+var app = require('express');
+
+var express = require('express')
+
+var app = express()
+
+app.use(express.static('public'));
+
+  
+
+app.set('view engine', 'ejs');
+
+app.get('/', function (req, res) {
+
+var a = {
+
+"name" :"Prashanth",
+
+"age" :"23"
+
+}
+
+res.render('index',{result:a})
+
+})
+
+app.listen(3000, function () {
+
+console.log('Example app listening on port 3000!')
+
+})
+
+
+
+
+Image:
+https://lh4.googleusercontent.com/0y6nRvIBz6SGmUNUmnb0UGVrqkqmGcrY9eMoNkm2XLK180V-trwnXaZrXwdD0KuPy_dojBAFugWgeairgOnsDVV7i2oTP9vpmmIm9Rj-VHmHBUbvsQurGjgmCCx4MmGijGWiNxvQ
+
+
+Accessing the passed variables in index ejs file:
+
+Example :(index.ejs)
+
+//code
+
+<h2><%= result.name %></h2>
+
+
+//Image:
+https://lh3.googleusercontent.com/UjyLYN7eBWPNe3_p6CNQL8yYSHjFgN9CFULFNkbkSivwXIbjRIIF9KJzCZb2wtYZUe6cLLT-9ftboMLPS8NvWO_KtJnWGiiy3PVeapieidWLB0pFYIqmwtpArjtOHb751M9cMXmI
+
+//Image:
+https://lh5.googleusercontent.com/DrxuXDjb9KqN3RA93FjTdQoiqo1piVTu5WXyPL939560rN7x0wQ4tVVqocgWIIcb5y7Bnm55Qi2-DKx9zon8dbkZtYgjs4KX5qdgHA0Vjw7Peel7L4ZHSCLISBa49x7IkfBhp3eq
+
+Result :)

@@ -1,0 +1,417 @@
+Building telegram chatbots:
+
+
+Live class-Introduction to chatbots
+Link:https://www.youtube.com/watch?v=TE8N9M_KnFc&feature=emb_logo
+
+Live class-Building telegram chatbots with api
+Link:https://www.youtube.com/watch?time_continue=1989&v=V9yrSVkAUks&feature=emb_logo
+
+
+
+Building telegram chatbots:
+
+
+
+
+node-telegram-bot-api-tutorial
+This is a beginners' guide for node-telegram-bot-api .
+
+1.Creating new bot with BotFather
+2.First message
+3.Commands
+4.Keyboards
+5.User
+6.parse_mode
+7.Location and Number
+8.Interacting with groups and channels
+
+
+1.Creating new bot with BotFather:
+
+
+
+The following steps describe how to create a new bot:
+
+1.Contact @BotFather in your Telegram messenger
+2.To get a token, send BotFather a message that says /newbot
+3.When asked for a name for your new bot choose something that ends with the word bot. For example, my_test_bot
+4.If your chosen name is available, BotFather will send you a token
+5.Save the token
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/BotFather.JPG
+
+Once your bot is created, you can set a Description for it. Description is a message in middle of the page usually describing what the bot can do.
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/desc.JPG
+
+
+To set Description for your bot in BotFather do the following:
+
+Send /setdescription to BotFather
+Select the bot for which you are writing a Description
+Change the description and send it to BotFather
+There are some other useful methods in BotFather which we won't cover in this tutorial like /setcommands and other.
+
+
+
+2.First message:
+
+
+Ok now you're ready to go. Create a node project and install bot-api:
+
+npm install --save node-telegram-bot-api
+
+Create a file index.js (or any other name) and inside the file require node-telegram-bot-api:
+
+//Code     const TelegramBot = require('node-telegram-bot-api');
+
+Then you need to assign your token which you got from BotFather:
+
+//Code    const token = 'YOUR_TELEGRAM_BOT_TOKEN';
+
+And now create a new bot :
+
+//Code    const bot = new TelegramBot(token, {polling: true});
+
+Let's try out our bot and do some real world things. We need to get messages that user sends us , to do so we would use following code:
+
+
+//Code
+bot.on('message', (msg) => {
+    
+     //anything
+     
+});
+
+
+
+
+
+
+Let's create simple greeting here. Here's big picture of our code :
+
+const TelegramBot = require('node-telegram-bot-api'); 
+const token = 'YOUR_TELEGRAM_BOT_TOKEN';
+const bot = new TelegramBot(token, {polling: true});
+    
+bot.on('message', (msg) => {
+    
+  //anything
+     
+});
+
+
+
+
+
+We were trying to greet and we'll do it here:
+
+bot.on('message', (msg) => {
+    
+var Hi = "hi";
+if (msg.text.toString().toLowerCase().indexOf(Hi) === 0) {
+bot.sendMessage(msg.chat.id,"Hello dear user");
+} 
+    
+});
+
+
+
+
+Ok , now open up your command prompt and type:
+
+node index.js
+Go to your bot and hit on /start and then type "Hi" to it:
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/first%20message.JPG
+
+
+
+So now that you know how to send and receive messages in your bot you may want to put some salt on it:
+
+bot.on('message', (msg) => {
+
+var hi = "hi";
+if (msg.text.toString().toLowerCase().indexOf(hi) === 0) {
+bot.sendMessage(msg.chat.id,"Hello dear user");
+} 
+    
+var bye = "bye";
+if (msg.text.toString().toLowerCase().includes(bye)) {
+bot.sendMessage(msg.chat.id, "Hope to see you around again , Bye");
+} 
+
+});
+
+
+
+
+
+This time we're using "includes" method so if user sends us anything containing "bye" word we'll send him back the message:
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/Bye.JPG
+
+And definitely you can use any other string method that you want.
+
+
+
+
+
+3.Commands
+
+
+
+
+That's really common to send user a message describing use of bot while he taps on "/start". (these are called commands) To do so :
+
+bot.onText(/\/start/, (msg) => {
+
+bot.sendMessage(msg.chat.id, "Welcome");
+    
+});
+Let's create another command that will send a picture to user:
+
+bot.onText(/\/sendpic/, (msg) => {
+
+bot.sendPhoto(msg.chat.id,"https://www.somesite.com/image.jpg" );
+    
+});
+
+
+So now if you write "/sendpic" on your bot an image will be sent. Sending audios is same and simple you can use "sendAudio" method .
+
+Now you might have seen some pictures containing caption with them like the following picture.
+
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/CaptionJPG.JPG
+
+
+Well , How to to create these? Answer is really simple you can send a caption with option on photo like so :
+
+bot.onText(/\/sendpic/, (msg) => {
+
+bot.sendPhoto(msg.chat.id,"https://www.somesite.com/image.jpg",{caption : "Here we go ! \nThis is just a caption "} );
+    
+});
+So now you know how to create captions and how to go to new line in your messages by typing \n .
+
+
+
+
+
+4.Keyboards:
+
+
+
+
+
+Let's go a step further and start working with keyboards. keyboards are actually the ones shown in this picture:
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/keyboard.jpg
+
+Keyboards are nothing but an easy way to send messages. It's like your not forcing users to write something down and send it to bot but instead your demonstrating them some options that they can tap on and a message will be sent after that. So let's see how we can create Keyboards , we'll send a Keyboard on "/start" message:
+
+
+bot.onText(/\/start/, (msg) => {
+    
+bot.sendMessage(msg.chat.id, "Welcome", {
+"reply_markup": {
+    "keyboard": [["Sample text", "Second sample"],   ["Keyboard"], ["I'm robot"]]
+    }
+});
+    
+});
+
+
+So now if you run you will see:
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/Keyboards.JPG
+
+
+As I said in fact Keyboards are not nothing but automatic type and send for user. There is no difference
+if you write "I'm robot" and sending on your own or you click on Keyboard. Let's do something simple
+when that "I'm robot" is received.So add this up to your previous on message:
+
+
+bot.on('message', (msg) => {
+var Hi = "hi";
+if (msg.text.toString().toLowerCase().indexOf(Hi) === 0) {
+    bot.sendMessage(msg.chat.id, "Hello dear user");
+}
+var bye = "bye";
+if (msg.text.toString().toLowerCase().includes(bye)) {
+    bot.sendMessage(msg.chat.id, "Hope to see you around again , Bye");
+}    
+var robot = "I'm robot";
+if (msg.text.indexOf(robot) === 0) {
+    bot.sendMessage(msg.chat.id, "Yes I'm robot but not in that way!");
+}
+});
+
+
+
+So now if you go to your bot tap on start you see Keyboards and if you tap on I'm robot you'll see the message. Note that there is no difference if you type it or you send it by Keyboards.
+
+
+
+
+5.User:
+
+
+
+
+
+
+node-telegram-bot-api does not have any method to get users information but in case if you want to, you can get information like so:
+
+
+var Hi = "hi";
+if (msg.text.toString().toLowerCase().indexOf(Hi) === 0) {
+    bot.sendMessage(msg.from.id, "Hello  " + msg.from.first_name);
+}
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/usersname.JPG
+
+
+And if you wanted to get user profile pictures you can use getUserProfilePhotos .
+
+getUserProfilePhotos:
+https://github.com/yagop/node-telegram-bot-api/blob/master/doc/api.md#telegrambotgetuserprofilephotosuserid-options--promise
+
+
+
+
+
+6.parse_mode:
+
+
+
+If you want to send messages with some style there, here is how it goes. parse_mode defines how you
+want you message to be rendered.You can define it inside in your options when sending message.
+Available option are HTML and Markdown.Let's see how it works in action:
+
+bot.on('message', (msg) => {
+
+ var Hi = "hi";
+ if (msg.text.toString().toLowerCase().indexOf(Hi) === 0) {
+   bot.sendMessage(msg.chat.id,"<b>bold</b> \n <i>italic</i> \n <em>italic with em</em> \n <a href=\"http://www.example.com/\">inline URL</a> \n <code>inline fixed-width code</code> \n <pre>pre-formatted fixed-width code block</pre>" ,{parse_mode : "HTML"});
+   }
+});
+
+
+So you get idea where parse_mode is defined.Now if we run this:
+
+Image:
+https://raw.githubusercontent.com/hosein2398/node-telegram-bot-api-tutorial/master/pics/parse_mode.JPG
+
+
+So that's how we do it with Html you can also write with Markdown.As mentioned in official api of Telegram only these tags are supported till now:
+
+<b>bold</b>, <strong>bold</strong>
+<i>italic</i>, <em>italic</em>
+<a href="http://www.example.com/">inline URL</a>
+<code>inline fixed-width code</code>
+<pre>pre-formatted fixed-width code block</pre>
+
+
+And for Markdown you can only use:
+
+*bold text*
+_italic text_
+[text](http://www.example.com/)
+`inline fixed-width code`
+
+
+7.Location and Number:
+
+
+
+
+There are some methods that enable you to send users location.
+Here is an example:
+
+bot.on('message', (msg) => {
+    var location = "location";
+    if (msg.text.indexOf(location) === 0) {
+        bot.sendLocation(msg.chat.id,44.97108, -104.27719);
+        bot.sendMessage(msg.chat.id, "Here is the point");
+
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+FINAL CAPSTONE PROJECT
+
+
+
+
+
+Target
+Use the problem statements of your choose to work on your Capstone Project.
+
+Category: (You may choose any one of them)
+
+Building a Telegram Chatbot with Database Integration
+Building a Web Application using Node JS, Express JS and Database Integration
+A problem statement might contain multiple problem briefs. A student can choose to work on any problem brief mentioned in their respective project category
+
+Students can choose to add their own creativity to enhance the solution.
+
+Share your Capstone Project submission along with the project document and other required items no longer than 20 September '20 for the final review. There would be no changes made in the project post this time. So, make sure you’ve got everything set before making your final submissions.
+
+Tips
+You can choose to interpret the problem briefs and add your own element of creativity in there as well.
+Try to come up with unique ideas/projects that are not already exists in the society and usefull to the students to give the effect a chance to stand out.
+Try and make your individual flavor to the project by building unique functionality
+Rubric (Submission Guidelines)
+The submission should contain a link to PUBLIC Google Drive Folder that includes source code of your project and Video showcasing the demo of your complete project,
+Additional Instructions
+Upload the files to your Google Drive Folder and submit the links.
+Some of the best projects may be chosen by us to choose the top winners. And winners will receive mentorship and certificates
+Please note: If you are caught for any type of cheating, whether it is plagiarism, cheating in this capstone project, we will remove you from course immediately and further disciplinary action will be taken.

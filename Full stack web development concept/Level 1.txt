@@ -1,0 +1,42 @@
+Revision - Web Development Bootcamp
+    (HTML+CSS+Bootstrap)
+
+
+1.Class one-Introduction to web development(HTML)
+Link:https://www.youtube.com/watch?time_continue=1&v=UxoX5fGQeiY&feature=emb_logo
+
+
+2.Class two-Styling your web pages-CSS
+Link:https://www.youtube.com/watch?time_continue=3904&v=yyFxGoxyLQM&feature=emb_logo
+
+
+3.Class three-Styling your web pages-CSS-Part two
+Link:https://www.youtube.com/watch?time_continue=3845&v=xUmM1ucWnJM&feature=emb_logo
+
+
+4.Class four-Building your web pages with Bootstrap
+Link:https://www.youtube.com/watch?time_continue=1715&v=UcHg0KPWNkY&feature=emb_logo
+
+
+5.Class five-Bootstrap-Part two
+Link:https://www.youtube.com/watch?time_continue=6118&v=k2XJcSpUfbM&feature=emb_logo
+
+
+6.Class six-Interactivity with javascript
+Link:https://www.youtube.com/watch?time_continue=7089&v=1Y8rKnPTzPc&feature=emb_logo
+
+
+Assignment:
+
+Building a website with similar design by using bootstrap.
+
+Submission Guidelines :
+Take a screenshot of your assignment and submit it.
+
+Please note : If you are caught for any type of cheating, whether it is plagiarism, cheating in this assignment, We will remove you from course immediately and further disciplinary action will be taken.
+
+Submissions Guidelines :
+Upload your image to google drive and share the public link.
+
+Image link:
+https://learn.vedic.dev/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--74d2fa9f11dacfe69849f80bcfd0d826e03bdb06/Personal%20Wesbite.jpg

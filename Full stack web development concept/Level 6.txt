@@ -1,0 +1,276 @@
+Database:
+
+
+
+Live class-Getting started with Nosql database:
+https://www.youtube.com/watch?v=YxWZhTUGkCk&feature=emb_logo
+
+
+
+
+Connecting mongodb to nodejs:
+
+
+
+STEP - 1 :
+Go to https://www.mongodb.com/
+
+
+
+
+
+
+
+STEP - 2 : SIGNING UP
+Click on Try Free.
+
+Image:
+https://lh6.googleusercontent.com/ux25tLQ4Ex9dDzI-A0d0CoMDxx04ktIZegksPFuJhUyPF9NXDIfYrgKw1Eae52U4Ij0WkGFHb9pbbNNTFwBfnAjrzZkqaigqmDRufuaiSW81mM3-d-U_GYEUFdChORoYm1q6NUWP
+
+And then fill your details(REMEMBER YOUR PASSWORD) and click on get started free.
+
+Image:
+https://lh4.googleusercontent.com/D9R2Ci-ehVT5sOXYru4Ff_LMiyQ-QCNldRmtGKTDgLfYbN7GAcUYtvbUWHn2AqJWw_npMyOBs6ykH0kDyCh5vvtVAkfeUVfU1PP9DeWIGOigr0CwiVZ31V58f2ez9qAJV0Ao_3vg
+
+
+
+
+
+
+STEP - 3 : CREATING A CLUSTER
+Select shared clusters and click on create cluster.
+
+Image:
+https://lh5.googleusercontent.com/sD5R43zed0VTrqcOOIPHRt0uO2gLL77zE5V1bPvEHb5uk-8sgNGQdax120ekbEi1Ehrle-9goIO0Nyyao-hNscgTY7JzIyuok5aIipI_Yk_zFEg3UdGW-oH1aVheLb86vLAiYWSf
+
+
+
+
+
+
+STEP - 4 :
+Make sure it displays FREE in the bottom-left corner of your screen as shown in the below image.
+
+Click on create cluster.
+
+Image:
+https://lh6.googleusercontent.com/nevDi9AutFSerfxGtn--iBi4_ov8Md1cqz_T58ki9QsXegLXlXwt4SEOcPXGHndt2FmlspH67BnPjQtPSt3qtPj5V4FViHEa1pIYcOAGnCX776n-lTZLc864Sb7FqGirH2UrC_HB
+
+
+
+
+
+
+
+STEP - 5 :
+You need to wait for 1-3 minutes for the cluster to be created. Once it is created, you will see the screen like this :
+
+Image:
+https://lh6.googleusercontent.com/3xIP60JYXmmrc8w9R6ttB9tGLjLXt4O4rPRJM7ewzlltSV_r2Ie5H5JE7wgNKnSZYLcC50s_myUiz8XDDHUBX3E-wwTjdy9XdWU2RCgROiUx4eX6uCR7AXMQYUBbvYc0y1PCkvwO
+
+
+
+
+
+
+STEP - 6 : ADDING A NEW DATABASE USER
+Click on Database Access and then click on Add New Database User.
+
+Image:
+https://lh6.googleusercontent.com/PmH36QvrZlNngK19_PiHrVCtTfO0DGveXm-zfdkUi-r4igiVWLbwk0WEevIEsTEbougXNZoEZFnYDcB4g-0-ZOS6VCBC-dwj0IlOhvcMzSlV9IcASE3oRa-x0iH_18mOPMb1eoqe
+
+
+
+
+
+
+STEP - 7 : SELECTING AUTHENTICATION METHOD
+
+Image:
+https://lh6.googleusercontent.com/nF1pScMR4gqCvVwJNT0fbc-HVxTR3WIzV9vo9TR061WAx8dOSTGoSwiOmwu4HZ3K6s1jEIQxoOUtYMx87jWfhnomfDahJNMGOwu6fVWGO5WIx59HKFEN_IQiUXWFRKa3QvpmTb0X
+
+In the above step, select password as authentication method. Remember your username and password. We will use them later while accessing the database.
+
+
+
+
+
+
+
+STEP - 8 : ADDING IP ADDRESS
+Click on Network Access and then click on Add IP Address.
+
+Image:
+https://lh4.googleusercontent.com/9mfwBHMYVzYfeg4eBFyuoOHxyfW5TXb5KQTpeRJY_M057PiJLyYorK2mJJuUqJoS7x1UoLGt5EjYGzly_HqLKaB3VL6dNV8UGCc_wxp-uVr1Tu7lh1B5KznTZpLCNnz20x-5YOXX
+
+
+
+
+
+
+
+STEP - 9 :
+Click on Allow access from anywhere and then click on confirm.
+
+Image:
+https://lh4.googleusercontent.com/joGnpGN2JEG52pxFxZ1Vjb790jx4RSoq6HfuhmfHhuvp_Va8_vaeDFgeT3igLkRs0MgOWt5Ba1oUMss5mmHNdXn3avq4KUW85S_HBh69o4_I5lzoSqIziaK401iyzFSG8GW9Bx5f
+
+
+
+
+
+
+STEP - 10 :
+Then make sure you get the status as Active.
+
+Image:
+https://lh3.googleusercontent.com/Zn1Rc37sZphdvQzGdIYsO1aZG3q0arQz_rhGlOST_-Z9ItliD5wXzo8K-mIexAoa4BBpJZ7Y_GKseTcOqAm_yUz4XybEkv_tGuwJ84L9FOklxhcHejg5yW7KMiAl5e8o0X6JE1qm
+
+
+
+
+
+
+
+STEP - 11 : CREATING COLLECTIONS
+Click on clusters and then click on collections as shown below :
+
+Image:
+https://lh6.googleusercontent.com/aefHmHCAEtbkux6JuDEFIk4ipvfa1MfGGdhtQgoI3eMWWhRa6VgR4KZY__9K5ZZa2xSdVHtE5XSF89sTzLvsTqr2EIPLoay4RPytK_xMsFvh1pDve4qB_hbbI52EL2mOGFUZ5how
+
+
+
+
+
+
+STEP - 12 :
+Click on Add my own data.
+
+Image:
+https://lh4.googleusercontent.com/4nmaCp5MI0EZuKEKZH5DxqgKbTajkxyF5MkabHwpL7y8RRGsSevob6euFic_hoo43uwL1hoLduLAsrxy4oxYV-Ro_cypH-y2fh6Xw3ncRbv3NDy6yNv9NjuT2p7hKoiLC6292M5c
+
+
+
+
+
+
+STEP-13:
+
+Image:
+https://lh5.googleusercontent.com/z8WEcRk1X0Zqc5nmyOgVmuTQpTBZs8I1245_Yis-AcyKEYE-2t9W9PFAURZ3nvpIAqUKdjMgZDzTifK_uJvGbGT6HxQUCA8qY8xmOABZl1tpgTga3L8he5cKSciVDeaEDlKqJbYd
+
+Enter database name and collection name and then click on create.
+
+
+
+
+
+
+
+STEP - 14 :
+Then you will see the following screen.
+
+Image:
+https://lh3.googleusercontent.com/WStd79BJr3qjqluLvmEAKnnUoFU_1xZqlnz4XwRnk7qmFE0zYt_wDO2-vSdch2beOXS0DshcBVM1SaOyiWYZkMym6g0oTyZxcM903NEB1hm-b44LDLQESLO5kv4nQ4btAOHBT4FX
+
+
+
+
+
+
+
+STEP - 15 : CREATING A JS FILE AND INSTALLING MONGOJS PACKAGE
+Create a sample .js file and make sure to install https://www.npmjs.com/package/mongojs mongojs package in your local system where JS file is there.
+
+(By using the following command npm i mongojs)
+
+
+
+
+
+
+
+STEP -16 : GETTING CONNECTION STRING
+Click on clusters and then click on connect. The connection string, as the name itself tells, is a link that connects your code to the database.
+
+Image:
+https://lh3.googleusercontent.com/5vWximNT1jkkaBhRu-AG7x0tkH5bPAoXuUaFwxYseCSYOFv7Ze8lcaDbLUKJ7CRm7Th-QOEn9irKi3l1d9NeXIecnh3lrkP0I2laAmvNJHy4b8T-Q2YyhsKnpyecg00BvVtmtfdK
+
+Now, select the connection method. Select connect your application
+
+Image:
+https://lh4.googleusercontent.com/s9KmFID_A2VlCJNqSrzzBg5C417MYrBnM0iJg-zj7abrmJk8xoZElbqg2irfxlcUGGMR7M-y-Y6DomJ86Sl0IPobWGLRrgFsBA9PWeO1Xk4LCzSG3oh24hSx4UG-oVWCkFo33gKh
+
+Make sure that your driver is Node.js and version is 3.6 or later
+
+Image:
+https://lh5.googleusercontent.com/ywkIXmmauVURX4iq5md0vhkkgqOr1KmN6bZPnldwgzYWRl62Gxg0w3NjIz7a8PQEwlYUpzU5PcLmcbnuopJxlqB6-oDejt_VnZYP9_it7LQHf2APp1NmU5BFwJaFrpfnUROKlGD4
+
+Now, you will get a connection string. Click on copy.
+
+
+
+
+
+
+
+STEP - 17 : MODIFYING THE CONNECTION STRING
+To the created .js file in STEP - 15, add the following code
+
+The function of mongojs package takes 2 arguments. The first one being the connection string and the second one is an array of collection(s) (collection that you made in STEP - 13).
+
+Image:
+https://lh4.googleusercontent.com/VqCBTsK8sC_LGnS3F5lx1iFZXm-LXpWOnNeDmEXtKISNspMJASXy4O-Y1MXdvL_2E9pV1uaNN3SzUu1zigqXeTzzyD9TVaZHLeU7lKR3xxSIT5ufOWi_MDC_P5mqpkMpNkUz6jKZ
+
+Make sure you replace with your password that you made in STEP - 7 and also replace with your database name that you created in STEP - 13.
+
+
+
+
+
+STEP - 18 : INSERTING DATA TO DATABASE
+Follow the below syntax for inserting data using insert() function. It takes 2 arguments. The first one being an object and the second one is a callback function.
+
+Image:
+https://lh5.googleusercontent.com/47mZYLF-86_z26n3FtCmmQEtyO8oNdaZdN-AXo6ueUHesRhqrFZe9HfwUI2idkgK9VY3sko9Y167iXC40WctuV7Qvzcv934DYCt0KzfCwRy61DkG-lCHTjPfAFYJZnlkrAw9PNW2
+
+After that run your .js file using the command node filename.js
+
+Now, click on clusters and then click on collections then you will see your data getting stored in the database. (refresh the page)
+
+Image:
+https://lh5.googleusercontent.com/gERvPx7u88nZHq1RewJs1boH7VtoESaBmwBboYT0jF10JuA8KCC1a6t4zgh0YGA8HdEEHSPNplxcXsBV2zheLITSibVi0730xqKhveJMDPv0XPMYkRmbexxqRgYSiYPmUUp9AhCU
+
+
+Mongo DB is a NOSQL database, which has dynamic schemas for unstructured data. This follows JSON notation. For better understanding, You can relate this to a book, where each page is called a document(contains object) whereas the entire book is called a collection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
